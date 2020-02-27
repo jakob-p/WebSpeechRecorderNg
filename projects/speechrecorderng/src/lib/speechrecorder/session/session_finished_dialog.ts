@@ -7,11 +7,11 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
   template: `<h1 mat-dialog-title><mat-icon [style.color]="'green'">done_all</mat-icon> Session finished</h1>
   <div mat-dialog-content>
 
-    <p>Thank you! The recording session is complete.</p>
+    <p>Danke! Die Aufnahmen sind jetzt vollständig.</p>
 
   </div>
   <div mat-dialog-actions>
-    <button mat-button (click)="closeDialog()">OK</button>
+    <button mat-button (click)="closeDialog()">Weiter</button>
   </div>
   `
 })
@@ -23,6 +23,7 @@ export class SessionFinishedDialog{
 
   closeDialog(): void {
     this.dialogRef.close();
+    window.location.href = "/test/"+window.location.href.match(/([^\/]*)\/*$/)[1];
   }
 
 }

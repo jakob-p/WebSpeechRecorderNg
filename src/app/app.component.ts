@@ -9,8 +9,11 @@ import { VERSION } from '../../projects/speechrecorderng/src/lib/spr.module.vers
 })
 export class AppComponent {
   sprVersion=VERSION;
-  title='SpeechRecorder Angular Demo'
-  shortTitle='SpeechRecorder'
+  title='KommPaS SpeechRecorder'
+  shortTitle='KommPaS Aufnehmen'
+  goBack=()=>{
+    window.location.href = "/test/"+window.location.href.match(/([^\/]*)\/*$/)[1];
+  }
   constructor(){
   }
 }

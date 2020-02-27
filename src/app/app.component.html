@@ -1,17 +1,8 @@
 <mat-toolbar color="primary">
-
-    <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
+    <button mat-button (click)="goBack()">
+        <mat-icon>arrow_left</mat-icon>
     </button>
-    <mat-menu #menu="matMenu" yPosition="below" [overlapTrigger]="false">
-      <button mat-menu-item  [matMenuTriggerFor]="helpMenu">Help</button>
-      <mat-menu #helpMenu="matMenu" xPosition="after" [overlapTrigger]="false">
-        <p>WebSpeechRecorderNg {{sprVersion}}</p>
-      </mat-menu>
-    </mat-menu>
-    &nbsp;<span fxShow.xs="false">{{title}}</span><span fxShow.xs="true" fxShow="false">{{shortTitle}}</span>
-
-
+    <span fxShow.xs="false">{{title}}</span><span fxShow.xs="true" fxShow="false">{{title}}</span>
 </mat-toolbar>
 <router-outlet></router-outlet>
 
