@@ -23,7 +23,11 @@ export class SessionFinishedDialog{
 
   closeDialog(): void {
     this.dialogRef.close();
-    window.location.href = "/test/"+window.location.href.match(/([^\/]*)\/*$/)[1];
+    if ('referrer' in document) {
+      window.location.href = document.referrer;
+    } else {
+      window.history.back();
+    }
   }
 
 }
